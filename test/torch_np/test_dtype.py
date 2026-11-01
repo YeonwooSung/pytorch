@@ -32,9 +32,7 @@ np_dtype_params = [
 for name in dtype_names:
     np_dtype_params.append(subtest((name, name), name=repr(name)))
     np_dtype_params.append(subtest((name, getattr(numpy, name)), name=f"numpy_{name}"))
-    np_dtype_params.append(
-        subtest((name, numpy.dtype(name)), name=f"numpy_{name!r}")
-    )
+    np_dtype_params.append(subtest((name, numpy.dtype(name)), name=f"numpy_{name!r}"))
 
 
 @instantiate_parametrized_tests
